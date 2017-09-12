@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+ <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/estilo.css"/>
+	<script type="text/javascript" src="./lib/angular.js"></script>
+	<script type="text/javascript" src="./js/app.js"></script>
+	<script type="text/javascript" src="./js/controller/quartoCTRL.js"></script>
+  <style>
+   
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>John's Blog</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Home</a></li>
+        <li><a href="#section2">Friends</a></li>
+        <li><a href="#section3">Family</a></li>
+        <li><a href="#section3">Photos</a></li>
+      </ul>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Blog.."/>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-sm-9">
+      
+      
+		<div class="panel panel-default">		
+			<div class="panel-heading">Quarto Hotel</div>
+		    	<div class="panel-body">
+			    	<form class="form-horizontal"	>
+			    		<div class="form-group">
+				    		<label for="porta" class="col-sm-2 control-label">Porta</label>
+				    		<div class="col-sm-2">
+				    			<input class="form-control" type="text" id="porta" ng-model="quarto.numeroPorta"/>
+				    		</div>	
+			    		</div>
+			    		<div class="form-group">	
+				    		<label for="status" class="col-sm-2 control-label">Situação</label>
+				    		<div class="col-sm-4">
+							    <select class="form-control" id="status" ng-model="quarto.statusQuarto">
+								    <option value=""></option>
+								    <option value="DISPONIVEL">disponível</option>
+								    <option value="OCUPADO">Ocupado	</option>					   
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+						    <label for="capacidade" class="col-sm-2 control-label">Capacidade Quarto</label>
+						    <div class="col-sm-2">
+						    	<input class="form-control" type="text" id="capacidade" ng-model="quarto.capacidade"/>
+						    </div>
+					    </div>	
+					    <div class="form-group">
+   				 			<div class="col-sm-offset-2 col-sm-10">			    
+					    		<button class="btn btn-info" ng-click="save(quarto)">Salvar</button>
+					    	</div>
+					    </div>	
+					</form>	
+			    </div>
+			<table class="table table-bordered">
+				<tr>
+					<th>Porta</th>
+					<th>Situação</th>
+					<th>Capacidade</th>
+					<th>Alterar</th>
+					<th>Excluir</th>
+				</tr>
+				<tr ng-repeat="x in quartos">
+					<td>{{ x.numeroPorta }}</td>
+					<td>{{ x.statusQuarto }}</td>
+					<td>{{ x.capacidade }}</td>
+					<td style="width: 4%"><button class="btn btn-defaut">
+						<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+					</button></td>
+					<td style="width: 4%"><button class="btn btn-defaut">
+						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+					</button></td>
+				</tr>
+			</table>
+		</div>
+	
+      
+      <div class="row">
+        <div class="col-sm-2 text-center">
+          
+        </div>
+        <div class="col-sm-10">
+          
+        </div>
+        <div class="col-sm-2 text-center">
+          
+        </div>
+        <div class="col-sm-10">
+          
+          <div class="row">
+            <div class="col-sm-2 text-center">
+             
+            </div>
+            <div class="col-xs-10">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>
